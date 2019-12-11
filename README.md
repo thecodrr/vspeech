@@ -66,6 +66,8 @@ I will add a `bash` script for automating this process including the downloading
 
 ## Usage
 
+**There is a complete example of how to use this module in [`cmd/main.v`](https://github.com/thecodrr/vspeech/tree/master/cmd/main.v)**
+
 ```rust
 import thecodrr.vspeech
 // specify values for use later
