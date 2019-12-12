@@ -53,7 +53,7 @@ import thecodrr.vave
 6. When you are done, run this command in your project directory:
 
    ```
-   export LD_LIBRARY_PATH=$PWD/lib/
+   export LD_LIBRARY_PATH=$PWD/lib/;$LD_LIBRARY_PATH
    ```
 
 And done!
@@ -81,7 +81,7 @@ mut model := vspeech.new("/path/to/the/model.pbmm", 1)
 
 lm := "/path/to/the/lm/file" //its in the models archive
 trie := "/path/to/the/trie/file" //its in the models archive
-// enable the decoder with language model (this must be called)
+// enable the decoder with language model (optional)
 model.enable_decoder_with_lm(lm, trie, lm_weight, valid_word_count_weight)
 
 data := byteptr(0)//raw audio samples (use thecodrr.vave module for this)
@@ -113,7 +113,7 @@ The main `struct` represents the interface to the underlying model. It has the f
 
 #### 1. `enable_decoder_with_lm(lm_path, trie_path, lm_weight, valid_word_count_weight)`
 
-This **must** be called **before any other other method**. Basically it loads the Language Model and enables the decoder to use it. Read the method comments to know what each `param` does.
+Load the Language Model and enable the decoder to use it. Read the method comments to know what each `param` does.
 
 #### 2. `get_model_sample_rate()`
 

@@ -54,8 +54,6 @@ struct Model {
 	beam_width          int
 	model_path          string
 	model_state			&ModelState
-	mut:
-	lm_enabled			bool
 	pub:
 	streaming_state		&StreamingState
 }
@@ -113,7 +111,6 @@ pub fn (m &Model) get_model_sample_rate() int {
 // buffer     A 16-bit, mono raw audio signal at the appropriate sample rate.
 // bufferSize The number of samples in the audio signal.
 pub fn (m &Model) speech_to_text(buffer byteptr, buffer_size int) string {
-	m.check_lm()
 	str := C.DS_SpeechToText(m.model_state, buffer, buffer_size)
 	if str == C.NULL {
 		panic("speech_to_text: error converting audio to text.")
@@ -126,7 +123,6 @@ pub fn (m &Model) speech_to_text(buffer byteptr, buffer_size int) string {
 // buffer     A 16-bit, mono raw audio signal at the appropriate sample rate.
 // buffer_size The number of samples in the audio signal.
 pub fn (m &Model) speech_to_text_with_metadata(buffer byteptr, buffer_size int) &Metadata {
-	m.check_lm()
 	metadata := C.DS_SpeechToTextWithMetadata(m.model_state, buffer, buffer_size)
 	if metadata == C.NULL {
 		panic("speech_to_text_with_metadata: error converting audio to text.")
@@ -138,7 +134,6 @@ pub fn (m &Model) speech_to_text_with_metadata(buffer byteptr, buffer_size int) 
 // by this function can then be passed to feed_audio_content()
 // and finish_stream().
 pub fn (m &Model) create_stream() {
-	m.check_lm()
 	ret := C.DS_CreateStream(m.model_state, &m.streaming_state)
 	if ret > 0 {
 		panic("create_stream: error creating stream.")
@@ -216,11 +211,4 @@ pub fn (m &Metadata) free() {
 // str returns the string representation of the MetadataItem
 pub fn (m &MetadataItem) str() string {
 	return 'Character: ${m.character}\nTimestep: ${m.timestep}\nStart time: ${m.start_time}\n'
-}
-
-// Private
-fn (m &Model) check_lm(){
-	if !m.lm_enabled {
-		panic("You did not enable the language model. Please call enable_decoder_with_lm() before calling this function.")
-	}
 }
