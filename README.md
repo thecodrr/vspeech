@@ -3,8 +3,7 @@
 <p align="center">
 V bindings for <a href="">Mozilla's DeepSpeech</a> <a href="">TensorFlow</a> based library for Speech-to-Text.
 </p>
-<a href="https://gifyu.com/image/vOMS"><img src="https://s5.gifyu.com/images/show.gif" alt="show.gif" border="0" /></a>
-</div>
+<a href="https://gifyu.com/image/vOMh"><img src="https://s5.gifyu.com/images/showb3037c75870403f5.gif" alt="showb3037c75870403f5.gif" border="0" /></a></div>
 
 ## Installation:
 
