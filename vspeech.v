@@ -95,7 +95,6 @@ pub fn (m &Model) free_string(text string){
 // lm_weight 	        	The weight to give to language model results when scoring.
 // valid_word_count_weight 	The weight (bonus) to give to beams when adding a new valid word to the decoding.
 pub fn (m mut Model) enable_decoder_with_lm(lm_path, trie_path string, lm_weight, valid_word_count_weight f64) {
-	m.lm_enabled = true
 	result := DS_EnableDecoderWithLM(m.model_state, lm_path.str, trie_path.str, lm_weight, valid_word_count_weight)
 	if result > 0 {
 		panic("Failed to enable decoder with language model. Error code: ${result.str()}")
