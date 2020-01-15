@@ -53,7 +53,7 @@ import thecodrr.vave
 6. When you are done, run this command in your project directory:
 
    ```
-   export LD_LIBRARY_PATH=$PWD/lib/;$LD_LIBRARY_PATH
+   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD/lib/
    ```
 
 And done!
