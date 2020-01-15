@@ -40,15 +40,15 @@ import thecodrr.vave
 
 **Perform the following steps:**
 
-1. Download the latest `native_client.<your system>.tar.xz` matching your system from [DeepSpeech's Releases](https://github.com/mozilla/DeepSpeech/releases/tag/v0.6.0).
+1. Download the latest `native_client.<your system>.tar.xz` matching your system from [DeepSpeech's Releases](https://github.com/mozilla/DeepSpeech/releases/tag/v0.6.1).
 
 2. Extract the `.tar.xz` into your project directory in `libs` folder. **It MUST be in the libs folder. If you don't have one, create it and extract into it.**
 
-3. Download `pre-trained` model from [DeepSpeech's Releases](https://github.com/mozilla/DeepSpeech/releases/tag/v0.6.0) (the file named `deepspeech-0.6.0-models.tar.gz`). It's pretty big (1.1G) so make sure you have the space.
+3. Download `pre-trained` model from [DeepSpeech's Releases](https://github.com/mozilla/DeepSpeech/releases/tag/v0.6.1) (the file named `deepspeech-0.6.1-models.tar.gz`). It's pretty big (1.1G) so make sure you have the space.
 
 4. Extract the model anywhere you like on your system.
 
-5. **Extra:** If you don't have any audio files for testing etc. you can download the samples from [DeepSpeech's Releases](https://github.com/mozilla/DeepSpeech/releases/tag/v0.6.0) (the file named `audio-0.6.0.tar.gz`)
+5. **Extra:** If you don't have any audio files for testing etc. you can download the samples from [DeepSpeech's Releases](https://github.com/mozilla/DeepSpeech/releases/tag/v0.6.1) (the file named `audio-0.6.1.tar.gz`)
 
 6. When you are done, run this command in your project directory:
 
